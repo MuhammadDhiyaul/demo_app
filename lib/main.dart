@@ -8,14 +8,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text('Hello World',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
-        ),
-      ),
+          appBar: AppBar(
+            title: Text('Login'),
+          ),
+          body: Column(
+            children: <Widget>[
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(labelText: 'Email'),
+              ),
+              TextField(
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(labelText: 'Password'),
+              ),
+              ElevatedButton(
+                onPressed: () => print('Login clicked'),
+                child: Text('Login'),
+                style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 36)),
+              )
+            ],
+          )),
     );
   }
 }
